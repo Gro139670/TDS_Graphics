@@ -1,0 +1,72 @@
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8004: Output 디렉터리가 슬래시로 끝나지 않습니다. Output 디렉터리의 적절한 평가를 허용하는 데 필요하므로 이 빌드 인스턴스에서 슬래시를 추가합니다.
+  Camera.cpp
+  D3DRenderer.cpp
+F:\Git\TDS_Graphics\TDS_Graphics\Graphics\D3DRenderer.h(201,13): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\Git\TDS_Graphics\TDS_Graphics\Graphics\D3DRenderer.h(202,13): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\Git\TDS_Graphics\TDS_Graphics\Graphics\D3DRenderer.cpp(27,11): warning C4312: '형식 캐스트': 'int'에서 더 큰 'HWND'(으)로의 변환입니다.
+F:\Git\TDS_Graphics\TDS_Graphics\Graphics\D3DRenderer.cpp(54,83): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\Git\TDS_Graphics\TDS_Graphics\Graphics\D3DRenderer.cpp(54,68): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\Git\TDS_Graphics\TDS_Graphics\Graphics\D3DRenderer.cpp(162,32): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\Git\TDS_Graphics\TDS_Graphics\Graphics\D3DRenderer.cpp(201,39): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\Git\TDS_Graphics\TDS_Graphics\Graphics\D3DRenderer.cpp(206,40): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\Git\TDS_Graphics\TDS_Graphics\Graphics\D3DRenderer.cpp(225,88): warning C4244: '인수': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\Git\TDS_Graphics\TDS_Graphics\Graphics\D3DRenderer.cpp(244,89): warning C4244: '인수': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\Git\TDS_Graphics\TDS_Graphics\Graphics\D3DRenderer.cpp(256,87): warning C4244: '인수': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\Git\TDS_Graphics\TDS_Graphics\Graphics\D3DRenderer.cpp(310,91): warning C4267: '=': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\Git\TDS_Graphics\TDS_Graphics\Graphics\D3DRenderer.cpp(322,91): warning C4267: '=': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\Git\TDS_Graphics\TDS_Graphics\Graphics\D3DRenderer.cpp(424,94): warning C4267: '=': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\Git\TDS_Graphics\TDS_Graphics\Graphics\D3DRenderer.cpp(665,56): warning C4267: '=': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\Git\TDS_Graphics\TDS_Graphics\Graphics\D3DRenderer.cpp(669,64): warning C4244: '=': 'double'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\Git\TDS_Graphics\TDS_Graphics\Graphics\D3DRenderer.cpp(735,30): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\Git\TDS_Graphics\TDS_Graphics\Graphics\D3DRenderer.cpp(870,22): warning C4267: '초기화 중': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\Git\TDS_Graphics\TDS_Graphics\Graphics\D3DRenderer.cpp(881,33): warning C4267: '=': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\Git\TDS_Graphics\TDS_Graphics\Graphics\D3DRenderer.cpp(895,28): warning C4244: '인수': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\Git\TDS_Graphics\TDS_Graphics\Graphics\D3DRenderer.cpp(932,31): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\Git\TDS_Graphics\TDS_Graphics\Graphics\D3DRenderer.cpp(1176,76): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  DebugDraw.cpp
+  DX11Device.cpp
+F:\Git\TDS_Graphics\TDS_Graphics\Graphics\DX11Device.cpp(86,36): warning C4244: '=': 'float'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\Git\TDS_Graphics\TDS_Graphics\Graphics\DX11Device.cpp(87,38): warning C4244: '=': 'float'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\Git\TDS_Graphics\TDS_Graphics\Graphics\DX11Device.cpp(115,33): warning C4244: '=': 'float'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\Git\TDS_Graphics\TDS_Graphics\Graphics\DX11Device.cpp(116,35): warning C4244: '=': 'float'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\Git\TDS_Graphics\TDS_Graphics\Graphics\DX11Device.cpp(136,39): warning C4244: '=': 'float'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\Git\TDS_Graphics\TDS_Graphics\Graphics\DX11Device.cpp(137,41): warning C4244: '=': 'float'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\Git\TDS_Graphics\TDS_Graphics\Graphics\DX11Device.cpp(174,34): warning C4244: '=': 'float'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\Git\TDS_Graphics\TDS_Graphics\Graphics\DX11Device.cpp(175,36): warning C4244: '=': 'float'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\Git\TDS_Graphics\TDS_Graphics\Graphics\DX11Device.cpp(270,44): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\Git\TDS_Graphics\TDS_Graphics\Graphics\DX11Device.cpp(271,34): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\Git\TDS_Graphics\TDS_Graphics\Graphics\DX11Device.cpp(541,54): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\Git\TDS_Graphics\TDS_Graphics\Graphics\DX11Device.cpp(547,46): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\Git\TDS_Graphics\TDS_Graphics\Graphics\DX11Device.cpp(549,46): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\Git\TDS_Graphics\TDS_Graphics\Graphics\DX11Device.cpp(613,65): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  FBXParser.cpp
+F:\Git\TDS_Graphics\TDS_Graphics\Graphics\FBXParser.cpp(257,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+F:\Git\TDS_Graphics\TDS_Graphics\Graphics\FBXParser.cpp(309,45): warning C4267: '=': 'size_t'에서 '_Ty'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\Git\TDS_Graphics\TDS_Graphics\Graphics\FBXParser.cpp(309,45): warning C4267:         with
+F:\Git\TDS_Graphics\TDS_Graphics\Graphics\FBXParser.cpp(309,45): warning C4267:         [
+F:\Git\TDS_Graphics\TDS_Graphics\Graphics\FBXParser.cpp(309,45): warning C4267:             _Ty=UINT
+F:\Git\TDS_Graphics\TDS_Graphics\Graphics\FBXParser.cpp(309,45): warning C4267:         ]
+F:\Git\TDS_Graphics\TDS_Graphics\Graphics\FBXParser.cpp(317,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+F:\Git\TDS_Graphics\TDS_Graphics\Graphics\FBXParser.cpp(351,21): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+F:\Git\TDS_Graphics\TDS_Graphics\Graphics\FBXParser.cpp(373,21): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+F:\Git\TDS_Graphics\TDS_Graphics\Graphics\FBXParser.cpp(377,22): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+F:\Git\TDS_Graphics\TDS_Graphics\Graphics\FBXParser.cpp(392,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+F:\Git\TDS_Graphics\TDS_Graphics\Graphics\FBXParser.cpp(414,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+F:\Git\TDS_Graphics\TDS_Graphics\Graphics\FBXParser.cpp(418,21): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+F:\Git\TDS_Graphics\TDS_Graphics\Graphics\FBXParser.cpp(437,43): warning C4244: '=': 'size_t'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.33807\include\xutility(4672,18): warning C4244: '=': 'const wchar_t'에서 'char'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  ID3DRenderer.cpp
+F:\Git\TDS_Graphics\TDS_Graphics\Graphics\D3DRenderer.h(201,13): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\Git\TDS_Graphics\TDS_Graphics\Graphics\D3DRenderer.h(202,13): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Object.cpp
+  ObjectManager.cpp
+  ResourceManager.cpp
+  TestObject.cpp
+F:\Git\TDS_Graphics\TDS_Graphics\Graphics\TestObject.cpp(68,8): warning C4101: 'tx' :참조되지 않은 지역 변수입니다.
+F:\Git\TDS_Graphics\TDS_Graphics\Graphics\TestObject.cpp(69,16): warning C4101: 'bz' :참조되지 않은 지역 변수입니다.
+F:\Git\TDS_Graphics\TDS_Graphics\Graphics\TestObject.cpp(68,12): warning C4101: 'ty' :참조되지 않은 지역 변수입니다.
+F:\Git\TDS_Graphics\TDS_Graphics\Graphics\TestObject.cpp(69,12): warning C4101: 'by' :참조되지 않은 지역 변수입니다.
+F:\Git\TDS_Graphics\TDS_Graphics\Graphics\TestObject.cpp(68,16): warning C4101: 'tz' :참조되지 않은 지역 변수입니다.
+F:\Git\TDS_Graphics\TDS_Graphics\Graphics\TestObject.cpp(69,8): warning C4101: 'bx' :참조되지 않은 지역 변수입니다.
+  코드를 생성하고 있습니다...
+  Graphics.vcxproj -> F:\Git\TDS_Graphics\TDS_Graphics\Libraries\DebugLib\Graphics\Graphics.lib

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <ProjectOutputs />
+  <ContentFiles>
+    <ContentFile>
+      <FullPath>F:\Git\TDS_Graphics\TDS_Graphics\Libraries\DebugLib\Graphics\CombinePS.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>F:\Git\TDS_Graphics\TDS_Graphics\Libraries\DebugLib\Graphics\CombineVS.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>F:\Git\TDS_Graphics\TDS_Graphics\Libraries\DebugLib\Graphics\DefaultPS.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>F:\Git\TDS_Graphics\TDS_Graphics\Libraries\DebugLib\Graphics\SpritePS.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>F:\Git\TDS_Graphics\TDS_Graphics\Libraries\DebugLib\Graphics\SpriteVS.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>F:\Git\TDS_Graphics\TDS_Graphics\Libraries\DebugLib\Graphics\StaticVS.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>F:\Git\TDS_Graphics\TDS_Graphics\Libraries\DebugLib\Graphics\SkeletalVS.cso</FullPath>
+    </ContentFile>
+  </ContentFiles>
+  <SatelliteDlls />
+  <NonRecipeFileRefs />
+</Project>

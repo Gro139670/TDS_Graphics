@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{816ed00b-9cb6-4e81-96df-9ab0d9320003}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{ec9a60a2-6909-4231-b5b6-cadbd878ec5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Renderer">
+      <UniqueIdentifier>{656b209b-5a1c-4784-82c7-52ca54c43629}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\ShaderFiles">
+      <UniqueIdentifier>{58128162-0c80-4708-a931-a7dbeb5933c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\ShaderFiles\hlsl">
+      <UniqueIdentifier>{ef22e428-6920-4896-9d06-180496ee8f36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Objects">
+      <UniqueIdentifier>{9a81cc2d-3af1-41b4-b70c-f89ba011fbed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Objects\Camera">
+      <UniqueIdentifier>{10b2cd66-0ab1-4d61-a312-41dc38bac38c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Objects\Test">
+      <UniqueIdentifier>{0881c591-5951-4d27-b900-037f163ffc4f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Management">
+      <UniqueIdentifier>{00d09a1e-f977-4930-89c2-c6c169536e95}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Renderer\DX11Device">
+      <UniqueIdentifier>{2a648bd1-5818-4499-bacf-0e87c3f2bb13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Renderer\DebugDraw">
+      <UniqueIdentifier>{88664d27-f0c4-4cee-b88b-c24878b442ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\FBXParser">
+      <UniqueIdentifier>{ed58d651-ca87-498e-9fee-9b4d5bd9c78f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ID3DRenderer.h">
+      <Filter>소스 파일\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="D3DRenderer.h">
+      <Filter>소스 파일\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="DX11Device.h">
+      <Filter>소스 파일\Renderer\DX11Device</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectManager.h">
+      <Filter>소스 파일\Management</Filter>
+    </ClInclude>
+    <ClInclude Include="TestObject.h">
+      <Filter>소스 파일\Objects\Test</Filter>
+    </ClInclude>
+    <ClInclude Include="RendererDef.h">
+      <Filter>소스 파일\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="framework.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstantBuffer.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="DX11Define.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="D3DHelper.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>소스 파일\Objects\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>소스 파일\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="DebugDraw.h">
+      <Filter>소스 파일\Renderer\DebugDraw</Filter>
+    </ClInclude>
+    <ClInclude Include="FBXParser.h">
+      <Filter>소스 파일\FBXParser</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceManager.h">
+      <Filter>소스 파일\Management</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="D3DRenderer.cpp">
+      <Filter>소스 파일\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="DX11Device.cpp">
+      <Filter>소스 파일\Renderer\DX11Device</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectManager.cpp">
+      <Filter>소스 파일\Management</Filter>
+    </ClCompile>
+    <ClCompile Include="TestObject.cpp">
+      <Filter>소스 파일\Objects\Test</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>소스 파일\Objects\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>소스 파일\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="ID3DRenderer.cpp">
+      <Filter>소스 파일\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="DebugDraw.cpp">
+      <Filter>소스 파일\Renderer\DebugDraw</Filter>
+    </ClCompile>
+    <ClCompile Include="FBXParser.cpp">
+      <Filter>소스 파일\FBXParser</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceManager.cpp">
+      <Filter>소스 파일\Management</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Header.hlsli">
+      <Filter>소스 파일\ShaderFiles\hlsl</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="DefaultPS.hlsl">
+      <Filter>소스 파일\ShaderFiles\hlsl</Filter>
+    </FxCompile>
+    <FxCompile Include="SkeletalVS.hlsl">
+      <Filter>소스 파일\ShaderFiles\hlsl</Filter>
+    </FxCompile>
+    <FxCompile Include="StaticVS.hlsl">
+      <Filter>소스 파일\ShaderFiles\hlsl</Filter>
+    </FxCompile>
+    <FxCompile Include="SpritePS.hlsl">
+      <Filter>소스 파일\ShaderFiles\hlsl</Filter>
+    </FxCompile>
+    <FxCompile Include="SpriteVS.hlsl">
+      <Filter>소스 파일\ShaderFiles\hlsl</Filter>
+    </FxCompile>
+    <FxCompile Include="CombineVS.hlsl">
+      <Filter>소스 파일\ShaderFiles\hlsl</Filter>
+    </FxCompile>
+    <FxCompile Include="CombinePS.hlsl">
+      <Filter>소스 파일\ShaderFiles\hlsl</Filter>
+    </FxCompile>
+  </ItemGroup>
+</Project>

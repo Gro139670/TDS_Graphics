@@ -5,6 +5,10 @@
 #include "DX11Device.h"
 #include "FBXParser.h"
 
+//#include "D3DHelper.h"
+
+//#include "DXTKFont.h"
+
 #include "DebugDraw.h"
 #include <functional>
 
@@ -118,8 +122,7 @@ void D3DRenderer::EndRender()
 	}
 	m_DebugBox.clear();
 	DebugDraw::g_Batch->End();
-#ifdef _DEBUG
-	DebugDraw::g_Batch->Begin();
+	/*DebugDraw::g_Batch->Begin();
 
 	for (auto& sphere : m_DebugSphere)
 	{
@@ -134,8 +137,7 @@ void D3DRenderer::EndRender()
 		DebugDraw::DrawRay(DebugDraw::g_Batch.get(), ray._Origin,ray._Direction, ray._IsNormal, ray._Color);
 	}
 	m_DebugRay.clear();
-	DebugDraw::g_Batch->End();
-#endif
+	DebugDraw::g_Batch->End();*/
 	//OnResize();
 	DrawSprite();
 
@@ -194,8 +196,6 @@ void D3DRenderer::Send(UINT _MessageNum, UINT _ObjectID, double _Data, Vector4 _
 	case 5:
 
 		// ===================================================================
-
-
 		// metallic
 	case 11:
 		FindObject(_ObjectID)->m_Metallic = _Data;
@@ -224,6 +224,9 @@ bool D3DRenderer::SetCameraProjection(float _Fov, float _AspectRatio, float _Nea
 
 	m_pCamera[_CameraID]->m_Projection = DirectX::XMMatrixPerspectiveFovLH(_Fov * 3.141592/180, _AspectRatio, _Near, _Far);
 
+	//m_pCamera[_CameraID]->m_Projection *= SimpleMath::Matrix::CreateScale(0.3334f,0.3334f,0.3334f);
+	//m_pCamera[_CameraID]->m_Projection *= SimpleMath::Matrix::CreateScale(2, 2, 2);
+
 	// s나중에 바꿔야할 부분.
 	m_EngineBuffer.Projection = m_pCamera[_CameraID]->m_Projection.Transpose();
 	m_pDevice->SetConstantBuffer(CB_Type::EngineBuffer, &m_EngineBuffer, Shader_Type::All);
@@ -243,6 +246,9 @@ bool D3DRenderer::SetCameraProjection(float _Fov, float _Near, float _Far, UINT 
 
 	m_pCamera[_CameraID]->m_Projection = DirectX::XMMatrixPerspectiveFovLH(_Fov * 3.141592 / 180, GetAspectRatio(), _Near, _Far);
 
+	//m_pCamera[_CameraID]->m_Projection *= SimpleMath::Matrix::CreateScale(0.3334f, 0.3334f, 0.3334f);
+	//m_pCamera[_CameraID]->m_Projection *= SimpleMath::Matrix::CreateScale(2, 2, 2);
+
 
 	// s나중에 바꿔야할 부분.
 	m_EngineBuffer.Projection = m_pCamera[_CameraID]->m_Projection.Transpose();
@@ -255,6 +261,8 @@ bool D3DRenderer::SetCameraProjection(float _Fov, UINT _CameraID)
 {
 	m_pCamera[_CameraID]->m_Projection = DirectX::XMMatrixPerspectiveFovLH(_Fov *3.141592/180, GetAspectRatio(), m_pCamera[_CameraID]->m_NEAR, m_pCamera[_CameraID]->m_FAR);
 
+	//m_pCamera[_CameraID]->m_Projection *= SimpleMath::Matrix::CreateScale(0.3334f, 0.3334f, 0.3334f);
+	//m_pCamera[_CameraID]->m_Projection *= SimpleMath::Matrix::CreateScale(2, 2, 2);
 
 	m_EngineBuffer.Projection = m_pCamera[_CameraID]->m_Projection.Transpose();
 	m_pDevice->SetConstantBuffer(CB_Type::EngineBuffer, &m_EngineBuffer, Shader_Type::All);
@@ -694,6 +702,13 @@ ObjectInfo* D3DRenderer::FindObject(UINT _ObjectID)
 	return result;
 }
 
+//void D3DRenderer::FastRender()
+//{
+//	//m_IsFastRender = true;
+//	//m_IsLateRender = false;
+//	//DrawStatic();
+//	//DrawSkeletal();
+//}
 
 void D3DRenderer::NormalRender()
 {
@@ -705,7 +720,6 @@ void D3DRenderer::NormalRender()
 
 void D3DRenderer::LateRender()
 {
-	// Zbuffer를 초기화하고 그린다.
 	m_IsLateRender = true;
 	m_pDevice->ClearDepthView();
 	DrawStatic();
@@ -952,8 +966,17 @@ void D3DRenderer::DrawSkeletal()
 		}
 		};
 
+
+
+
+	
+
+	// 오브젝트들을 일단 다 그린다.
 	for (auto& asset : m_pResourceManager->GetAllAssets<SkeletalObject>())
 	{
+
+		
+		// 오브젝트들을 일단 다 그린다.
 		{
 			for (auto& bone : m_BoneBuffer)
 			{
@@ -963,6 +986,7 @@ void D3DRenderer::DrawSkeletal()
 				}
 			}
 		}
+
 		for (auto& obj : m_pObjectManager->GetObjectList<SkeletalObject>()[asset.first])
 		{
 			
@@ -1039,6 +1063,7 @@ void D3DRenderer::DrawSkeletal()
 						}
 						else
 						{
+							//fullTime -= info.lock()->m_Animation[obj.m_CurrentSTATE].m_TickPerFrame;
 							SetBoneWolrd(asset.second->m_pNode.get(), world, obj.m_CurrentSTATE, fullTime, info.lock().get(), 1, true);
 						}
 					}
@@ -1052,6 +1077,10 @@ void D3DRenderer::DrawSkeletal()
 					}
 					SetBoneWolrd(asset.second->m_pNode.get(), world, obj.m_CurrentSTATE, obj.m_CurrentTime, info.lock().get(),0,false);
 				}
+			}
+			else
+			{
+				//SetBoneWolrd(asset.second->m_pNode.get(), world, obj.m_CurrentSTATE, obj.m_CurrentTime, nullptr, 0);
 			}
 			
 			m_pDevice->SetConstantBuffer(CB_Type::ObjectBuffer, &m_ObjectBuffer, Shader_Type::All);
@@ -1196,8 +1225,7 @@ float D3DRenderer::GetAspectRatio() const
 void D3DRenderer::Finalize()
 {
 #ifdef _DEBUG
-	//DebugDraw::Uninitialize();
-#endif // _DEBUG
 	DebugDraw::Uninitialize();
+#endif // _DEBUG
 
 }

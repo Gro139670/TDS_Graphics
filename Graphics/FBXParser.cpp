@@ -18,6 +18,11 @@ Converter::~Converter()
 
 void Converter::ReadAssetFile(std::wstring file, UINT _AssetNum)
 {
+	//std::unique_ptr<Assimp::Importer> m_importer;
+
+	//m_importer = std::make_unique<Assimp::Importer>();
+	//m_importer->SetPropertyBool(AI_CONFIG_IMPORT_FBX_PRESERVE_PIVOTS, 0);
+
 	Assimp::Importer m_importer;
 
 	if (m_pResourceManager->GetAsset<SkeletalObject>(_AssetNum).lock().get() != nullptr ||
@@ -64,6 +69,9 @@ void Converter::ReadAssetFile(std::wstring file, UINT _AssetNum)
 
 	if (hasBone == true)
 	{
+
+
+		// create SkeletalObject
 		{
 			std::shared_ptr<SkeletalObject> asset = std::make_shared<SkeletalObject>();
 			ProcessSkeletalNode(m_pScene->mRootNode, asset->m_pNode.get(),AiMatrixToMatrix(m_pScene->mRootNode->mTransformation));
@@ -87,6 +95,8 @@ void Converter::ReadAssetFile(std::wstring file, UINT _AssetNum)
 	}
 	else
 	{
+		
+		// create StaticObject
 		{
 			std::shared_ptr<StaticObject> asset = std::make_shared<StaticObject>();
 			ProcessStaticNode(m_pScene->mRootNode, asset->m_pNode.get());
@@ -156,6 +166,7 @@ void Converter::ReadAssetFile(std::wstring file, UINT _AssetNum)
 					/*				memcpy(&pos, &aiPos, sizeof(SimpleMath::Vector3));
 									memcpy(&scale, &aiScale, sizeof(SimpleMath::Vector3));*/
 									// 심플매스 쿼터니언하고 어심프 쿼터니언이 다르네..? xyzw wxyz
+									//memcpy(&quat, &aiQuat, sizeof(SimpleMath::Quaternion));
 									quat = { aiQuat.x,aiQuat.y,aiQuat.z,aiQuat.w };
 									pos = { aiPos.x,aiPos.y,aiPos.z };
 									scale = { aiScale.x,aiScale.y,aiScale.z };
@@ -165,7 +176,10 @@ void Converter::ReadAssetFile(std::wstring file, UINT _AssetNum)
 									time *= Anime.m_Animation[animSize].m_TickPerFrame;
 									// 모르겠다.,. 8바이트 값이니 그냥 푸시백한다.
 									Anime.m_Animation[animSize].m_Mesh[meshSize].m_Bone[boneSize].m_Time.push_back(time);
+
 								}
+								
+								// 반복문의 개물
 								// 다불러왔으면 다음 본의 채널찾기를 반복한다.
 								break;
 							}
@@ -208,7 +222,7 @@ void Converter::ReadAssetFile(std::wstring file, UINT _AssetNum)
 			Material mat;
 			for (size_t textures = 0; textures < AI_TEXTURE_TYPE_MAX; textures++)
 			{
-				// 무조건 텍스쳐는 맵마다 1장만 들어있다고 가정한다.
+				// 무조건 텍스쳐는 맵마다 1장만 들어있다고 가정한다. 나중에 바꿔줘야할듯.
 				if (AI_SUCCESS == m_pScene->mMaterials[materials]->GetTexture((aiTextureType)textures, 0, &path))
 				{
 					mat.m_path.push_back(path.C_Str());
@@ -236,8 +250,9 @@ void Converter::ProcessStaticNode(aiNode* node, StaticNode* _Node)
 {
 
 
-	// staticNode가 가지고 있는 정보
-	// 노드안에 들어있는 트랜스폼 정보.
+	/// staticNode가 가지고 있는 정보
+	//// 노드안에 들어있는 트랜스폼 정보.
+	//SimpleMath::Matrix m_Transform;
 	_Node->m_LocalMatrix = AiMatrixToMatrix(node->mTransformation);
 	// aiNode의 Mesh에 정보가 있으니까
 	// 정보를 다 빼낸 다음에 변환을 해야한다.
@@ -253,7 +268,9 @@ void Converter::ProcessStaticNode(aiNode* node, StaticNode* _Node)
 	// sNode의 역참조를 스테틱 노드에 넣어준다
 
 
-	// 다음 노드들을 이곳에 담는다.
+	//// 다음 노드들을 이곳에 담는다.
+	//std::vector<StaticNode> m_Childs;
+	//staicNode로 변환이 끝난 Children들을 넣으려면 재귀호출로
 	for (int i = 0; i < node->mNumChildren; i++)
 	{
 		if (node->mNumChildren > 0)
@@ -268,7 +285,7 @@ void Converter::ProcessStaticNode(aiNode* node, StaticNode* _Node)
 void Converter::ProcessSkeletalNode(aiNode* node, SkeletalNode* _Node,const SimpleMath::Matrix& _Parent)
 {
 
-	_Node->m_LocalMatrix = AiMatrixToMatrix(node->mTransformation);
+	_Node->m_LocalMatrix = AiMatrixToMatrix(node->mTransformation);// *_Parent;
 	if (node->mNumMeshes > 0)
 	{
 		if (_Node->m_pParent != nullptr)
@@ -276,6 +293,7 @@ void Converter::ProcessSkeletalNode(aiNode* node, SkeletalNode* _Node,const Simp
 			if (_Node->m_pParent->m_IsBone == true)
 			{
 				_Node->m_ParentMatrix = AiMatrixToMatrix(node->mParent->mTransformation);
+				_Node->m_pWeapon = _Node->m_pParent;
 				_Node->m_BoneIndex = _Node->m_pParent->m_BoneIndex;
 			}
 		}
@@ -293,7 +311,7 @@ void Converter::ProcessSkeletalNode(aiNode* node, SkeletalNode* _Node,const Simp
 		//m_pResourceManager->AddResource(typeid(_Node.m_Meshs.back()).name(),, _Node.m_Meshs.back());
 	}
 
-	// 비효율적인 코드로 보인다. 고칠 수 있을거 같다. 하지만 시간문제상 이렇게 한다.
+	// 비효율적으로 고칠 수 있을거 같다. 하지만 시간문제상 이렇게 한다.
 	if (m_pScene->HasAnimations())
 	{
 		//if (_Node->m_IsBone == false)
@@ -314,6 +332,13 @@ void Converter::ProcessSkeletalNode(aiNode* node, SkeletalNode* _Node,const Simp
 			}
 		}
 	}
+
+	
+
+	
+
+	
+
 	for (int i = 0; i < node->mNumChildren; i++)
 	{
 		if (node->mNumChildren > 0)
@@ -344,6 +369,8 @@ SimpleMath::Matrix Converter::AiMatrixToMatrix(const aiMatrix4x4 aiMatrix)
 
 StaticMesh Converter::ReadStaticMeshData(aiMesh* mesh)
 {
+	//if (node->mNumMeshes < 1)
+	//	return;
 
 	StaticMesh smesh;
 	smesh.m_MaterialIndex = mesh->mMaterialIndex + m_MaterialID;
@@ -445,3 +472,82 @@ SkeletalMesh Converter::ReadSkeletalMeshData(aiMesh* mesh)
 	// 스테틱 매쉬의 벡터에 포인터를 넣어준다
 	return smesh;
 }
+
+//void Converter::LoadAnimation(SkeletalObject* _Object)
+//{
+//	/*if (m_pScene->HasAnimations())
+//	{
+//		_Object->m_AnimInfo.resize(m_pScene->mNumAnimations);
+//		for (size_t animIndex = 0; animIndex < m_pScene->mNumAnimations; animIndex++)
+//		{
+//			_Object->m_AnimInfo[animIndex].m_ID = animIndex;
+//			_Object->m_AnimInfo[animIndex].m_Name = m_pScene->mAnimations[animIndex]->mName.C_Str();
+//
+//			for (size_t bones = 0; bones < m_pScene->mMeshes[0]->mNumBones; bones++)
+//			{
+//				for (size_t channelIndex = 0; channelIndex < m_pScene->mAnimations[animIndex]->mNumChannels; channelIndex++)
+//				{
+//					if ((m_pScene->mRootNode->FindNode(m_pScene->mAnimations[animIndex]->mChannels[channelIndex]->mNodeName)
+//						== m_pScene->mMeshes[0]->mBones[bones]->mNode))
+//					{
+//
+//						for (size_t key = 0; key < m_pScene->mAnimations[animIndex]->mChannels[channelIndex]->mNumPositionKeys; key++)
+//						{
+//							SimpleMath::Vector3 pos, scale;
+//							SimpleMath::Quaternion quat;
+//							memcpy(&pos, &m_pScene->mAnimations[animIndex]->mChannels[channelIndex]->mPositionKeys[key].mValue, sizeof(SimpleMath::Vector3));
+//							memcpy(&quat, &m_pScene->mAnimations[animIndex]->mChannels[channelIndex]->mRotationKeys[key].mValue, sizeof(SimpleMath::Quaternion));
+//							memcpy(&scale, &m_pScene->mAnimations[animIndex]->mChannels[channelIndex]->mScalingKeys[key].mValue, sizeof(SimpleMath::Vector3));
+//							_Object->m_Bone[animIndex][bones].m_Animation.push_back(SimpleMath::Matrix::CreateScale(scale) * SimpleMath::Matrix::CreateFromQuaternion(quat) * SimpleMath::Matrix::CreateTranslation(pos));
+//
+//						}
+//					}
+//				}
+//			}
+//		}
+//	}*/
+//
+//	// Load Anim
+//
+//	//if (m_pScene->HasAnimations())
+//	//{
+//	//	_Node->m_Bone.resize(m_pScene->mNumMeshes);
+//	//	for (size_t meshSize = 0; meshSize < m_pScene->mNumMeshes; meshSize++)
+//	//	{
+//	//		_Node->m_Bone[meshSize].resize(m_pScene->mNumAnimations);
+//	//		for (size_t animIndex = 0; animIndex < m_pScene->mNumAnimations; animIndex++)
+//	//		{
+//	//			for (size_t bones = 0; bones < m_pScene->mMeshes[meshSize]->mNumBones; bones++)
+//	//			{
+//	//				for (size_t channelIndex = 0; channelIndex < m_pScene->mAnimations[animIndex]->mNumChannels; channelIndex++)
+//	//				{
+//	//					// 현재 노드, 본의 노드와 채널의 노드가 같을때
+//	//					if ((m_pScene->mRootNode->FindNode(m_pScene->mAnimations[animIndex]->mChannels[channelIndex]->mNodeName)
+//	//						== m_pScene->mMeshes[meshSize]->mBones[bones]->mNode) && (m_pScene->mMeshes[meshSize]->mBones[bones]->mNode == node))
+//	//					{
+//	//						for (size_t key = 0; key < m_pScene->mAnimations[animIndex]->mChannels[channelIndex]->mNumPositionKeys; key++)
+//	//						{
+//	//							SimpleMath::Vector3 pos, scale;
+//	//							SimpleMath::Quaternion quat;
+//	//							memcpy(&pos, &m_pScene->mAnimations[animIndex]->mChannels[channelIndex]->mPositionKeys[key].mValue, sizeof(SimpleMath::Vector3));
+//	//							memcpy(&quat, &m_pScene->mAnimations[animIndex]->mChannels[channelIndex]->mRotationKeys[key].mValue, sizeof(SimpleMath::Quaternion));
+//	//							memcpy(&scale, &m_pScene->mAnimations[animIndex]->mChannels[channelIndex]->mScalingKeys[key].mValue, sizeof(SimpleMath::Vector3));
+//	//							_Node->m_Bone[meshSize][animIndex].m_AnimMatrix.push_back(SimpleMath::Matrix::CreateScale(scale) * SimpleMath::Matrix::CreateFromQuaternion(quat) * SimpleMath::Matrix::CreateTranslation(pos));
+//
+//	//						}
+//	//						_Node->m_Offset = AiMatrixToMatrix(&m_pScene->mMeshes[meshSize]->mBones[bones]->mOffsetMatrix);
+//	//						_Node->m_IsBone = true;
+//	//						
+//	//						break;
+//	//					}
+//	//					if (_Node->m_IsBone == true)
+//	//						break;
+//	//				}
+//	//				_Node->m_BoneIndex = bones;
+//	//				if (_Node->m_IsBone == true)
+//	//					break;
+//	//			}
+//	//		}
+//	//	}
+//	//}
+//}

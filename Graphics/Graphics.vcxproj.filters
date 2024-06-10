@@ -10,6 +10,12 @@
     <Filter Include="소스 파일\Renderer">
       <UniqueIdentifier>{656b209b-5a1c-4784-82c7-52ca54c43629}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Resource">
+      <UniqueIdentifier>{813a99d8-fa7b-4724-8e28-78d5a7135949}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Resource\TextFont">
+      <UniqueIdentifier>{a6d3feb2-c13f-42a9-8e8c-9f45392933c6}</UniqueIdentifier>
+    </Filter>
     <Filter Include="소스 파일\ShaderFiles">
       <UniqueIdentifier>{58128162-0c80-4708-a931-a7dbeb5933c4}</UniqueIdentifier>
     </Filter>
@@ -37,6 +43,9 @@
     <Filter Include="소스 파일\FBXParser">
       <UniqueIdentifier>{ed58d651-ca87-498e-9fee-9b4d5bd9c78f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Resource\ObjectInfo">
+      <UniqueIdentifier>{152e9514-caed-4b65-8b4e-dd3a4ea2fc9b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ID3DRenderer.h">
@@ -44,6 +53,9 @@
     </ClInclude>
     <ClInclude Include="D3DRenderer.h">
       <Filter>소스 파일\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="DXTKFont.h">
+      <Filter>소스 파일\Resource\TextFont</Filter>
     </ClInclude>
     <ClInclude Include="DX11Device.h">
       <Filter>소스 파일\Renderer\DX11Device</Filter>
@@ -53,6 +65,12 @@
     </ClInclude>
     <ClInclude Include="TestObject.h">
       <Filter>소스 파일\Objects\Test</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>소스 파일\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectInfo.h">
+      <Filter>소스 파일\Resource\ObjectInfo</Filter>
     </ClInclude>
     <ClInclude Include="RendererDef.h">
       <Filter>소스 파일\Renderer</Filter>
@@ -92,6 +110,9 @@
     <ClCompile Include="D3DRenderer.cpp">
       <Filter>소스 파일\Renderer</Filter>
     </ClCompile>
+    <ClCompile Include="DXTKFont.cpp">
+      <Filter>소스 파일\Resource\TextFont</Filter>
+    </ClCompile>
     <ClCompile Include="DX11Device.cpp">
       <Filter>소스 파일\Renderer\DX11Device</Filter>
     </ClCompile>
@@ -100,6 +121,12 @@
     </ClCompile>
     <ClCompile Include="TestObject.cpp">
       <Filter>소스 파일\Objects\Test</Filter>
+    </ClCompile>
+    <ClCompile Include="Resource.cpp">
+      <Filter>소스 파일\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectInfo.cpp">
+      <Filter>소스 파일\Resource\ObjectInfo</Filter>
     </ClCompile>
     <ClCompile Include="pch.cpp">
       <Filter>소스 파일</Filter>

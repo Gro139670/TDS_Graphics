@@ -125,4 +125,7 @@ namespace Render
 		std::map<std::string, std::map <std::string, std::shared_ptr<void>>> m_ResourceContainer;
 		std::map<UINT, std::shared_ptr<Material>> m_MaterialContainer;
 	};
+
+	template<typename T>
+	std::map<UINT, std::shared_ptr<T>> ResourceManager::m_Assets;
 }

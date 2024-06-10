@@ -27,7 +27,7 @@ struct StaticVertex
 {
 	SimpleMath::Vector3 m_Pos{};		// 버텍스 위치
 	SimpleMath::Vector3 m_UVW{};		//
-	SimpleMath::Vector3 m_Normal{};		//
+	SimpleMath::Vector3 m_Normal{};	//
 	SimpleMath::Vector3 m_Tangent{};	//
 };
 
@@ -135,6 +135,7 @@ public:
 	~SkeletalNode() {}
 public:
 	// 매쉬마다 다른 월드 트랜스폼이 필요하다.
+// 시간이 없으므로 넉넉하게 100개로 잡는다.
 	std::array<SimpleMath::Matrix, 10> m_WorldMatrix;
 	// 다음 노드들을 이곳에 담는다.
 	std::vector<SkeletalNode> m_Childs;
@@ -150,6 +151,8 @@ public:
 	UINT m_NextFrame = 0;
 	SkeletalNode* m_pParent= nullptr;
 
+	// 애니메이션에서 석궁을 위한 노드
+	SkeletalNode* m_pWeapon = nullptr;
 
 	SimpleMath::Matrix m_ParentMatrix;
 };
@@ -200,6 +203,11 @@ public:
 
 public:
 	std::shared_ptr<SkeletalNode> m_pNode;
+
+
+	// 이 오브젝트가 불투명한가?
+	bool m_IsOpaque = true;
+
 };
 
 #pragma endregion
@@ -220,6 +228,8 @@ namespace Anim
 	{
 		// 본 순서대로 넣는다.
 		std::vector<Bone> m_Bone;
+
+
 	};
 
 	struct Animation

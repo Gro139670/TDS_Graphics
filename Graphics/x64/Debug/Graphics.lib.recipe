@@ -3,25 +3,25 @@
   <ProjectOutputs />
   <ContentFiles>
     <ContentFile>
-      <FullPath>F:\Git\TDS_Graphics\TDS_Graphics\Libraries\DebugLib\Graphics\CombinePS.cso</FullPath>
+      <FullPath>C:\Users\user\Desktop\4Q_Project - 복사본\5_Project\5-4_MockeryEngine\MokeryEngine\Libraries\DebugLib\Graphics\CombinePS.cso</FullPath>
     </ContentFile>
     <ContentFile>
-      <FullPath>F:\Git\TDS_Graphics\TDS_Graphics\Libraries\DebugLib\Graphics\CombineVS.cso</FullPath>
+      <FullPath>C:\Users\user\Desktop\4Q_Project - 복사본\5_Project\5-4_MockeryEngine\MokeryEngine\Libraries\DebugLib\Graphics\CombineVS.cso</FullPath>
     </ContentFile>
     <ContentFile>
-      <FullPath>F:\Git\TDS_Graphics\TDS_Graphics\Libraries\DebugLib\Graphics\DefaultPS.cso</FullPath>
+      <FullPath>C:\Users\user\Desktop\4Q_Project - 복사본\5_Project\5-4_MockeryEngine\MokeryEngine\Libraries\DebugLib\Graphics\DefaultPS.cso</FullPath>
     </ContentFile>
     <ContentFile>
-      <FullPath>F:\Git\TDS_Graphics\TDS_Graphics\Libraries\DebugLib\Graphics\SpritePS.cso</FullPath>
+      <FullPath>C:\Users\user\Desktop\4Q_Project - 복사본\5_Project\5-4_MockeryEngine\MokeryEngine\Libraries\DebugLib\Graphics\SpritePS.cso</FullPath>
     </ContentFile>
     <ContentFile>
-      <FullPath>F:\Git\TDS_Graphics\TDS_Graphics\Libraries\DebugLib\Graphics\SpriteVS.cso</FullPath>
+      <FullPath>C:\Users\user\Desktop\4Q_Project - 복사본\5_Project\5-4_MockeryEngine\MokeryEngine\Libraries\DebugLib\Graphics\SpriteVS.cso</FullPath>
     </ContentFile>
     <ContentFile>
-      <FullPath>F:\Git\TDS_Graphics\TDS_Graphics\Libraries\DebugLib\Graphics\StaticVS.cso</FullPath>
+      <FullPath>C:\Users\user\Desktop\4Q_Project - 복사본\5_Project\5-4_MockeryEngine\MokeryEngine\Libraries\DebugLib\Graphics\StaticVS.cso</FullPath>
     </ContentFile>
     <ContentFile>
-      <FullPath>F:\Git\TDS_Graphics\TDS_Graphics\Libraries\DebugLib\Graphics\SkeletalVS.cso</FullPath>
+      <FullPath>C:\Users\user\Desktop\4Q_Project - 복사본\5_Project\5-4_MockeryEngine\MokeryEngine\Libraries\DebugLib\Graphics\SkeletalVS.cso</FullPath>
     </ContentFile>
   </ContentFiles>
   <SatelliteDlls />

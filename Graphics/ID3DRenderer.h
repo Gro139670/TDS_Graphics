@@ -9,7 +9,7 @@ public:
 
 	static ID3DRenderer* CreateRenderer();
 
-#pragma region RenderFoo
+#pragma region Render
 	// 기본 인터페이스
 
 	virtual bool Init(int hinst, int hWnd, int screenHeight, int screenWidth, float _GameScreenSize) abstract;

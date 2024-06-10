@@ -220,7 +220,7 @@ HRESULT DX11Device::Create(HWND hWnd, int screenWidth, int screenHeight, float _
 	depthStencilDesc.MipLevels = 1;
 	depthStencilDesc.ArraySize = 1;
 	depthStencilDesc.Format = DXGI_FORMAT_D24_UNORM_S8_UINT;
-	depthStencilDesc.SampleDesc.Count = 1;		// No MSAA
+	depthStencilDesc.SampleDesc.Count = 1;		
 	depthStencilDesc.SampleDesc.Quality = 0;
 	depthStencilDesc.Usage = D3D11_USAGE_DEFAULT;
 	depthStencilDesc.BindFlags = D3D11_BIND_DEPTH_STENCIL;
@@ -469,6 +469,8 @@ void DX11Device::OnBeginRender()
 {
 	assert(m_pDeviceContext);
 
+	//ID3D11ShaderResourceView* const pSRV[1] = { NULL };
+	//md3dImmediateContext->PSSetShaderResources(0, 1, pSRV);
 
 	// 마찬가지로 렌더 타겟도 다시 셋팅
 	m_pDeviceContext->OMSetRenderTargets(1, m_pScreenTargetView.GetAddressOf(), m_pScreenDepthView.Get());
@@ -515,6 +517,14 @@ void DX11Device::RenderPipeline()
 	// PS
 
 	m_pDeviceContext->PSSetShader(m_pPixelShader, nullptr, 0);
+	/*if (m_IsPixelShader == true)
+	{
+		
+	}
+	else
+	{
+		m_pDeviceContext->PSSetShader(nullptr, nullptr, 0);
+	}*/
 
 	// OM
 	m_pDeviceContext->OMSetDepthStencilState(m_pDepthState, 0);
@@ -779,3 +789,20 @@ void DX11Device::CreateTexture(const std::wstring& _Path, ComPtr<ID3D11ShaderRes
 
 	}
 }
+
+//D3D11_RASTERIZER_DESC wireframeDesc;
+//ZeroMemory(&wireframeDesc, sizeof(D3D11_RASTERIZER_DESC));
+//wireframeDesc.FillMode = D3D11_FILL_WIREFRAME;
+//wireframeDesc.CullMode = D3D11_CULL_BACK;
+//wireframeDesc.FrontCounterClockwise = false;
+//wireframeDesc.DepthClipEnable = true;
+
+//HR(m_pDevice->CreateRasterizerState(&wireframeDesc, &m_WireframeRS));
+
+//D3D11_DEPTH_STENCIL_DESC equalsDesc;
+//ZeroMemory(&equalsDesc, sizeof(D3D11_DEPTH_STENCIL_DESC));
+//equalsDesc.DepthEnable = true;
+//equalsDesc.DepthWriteMask = D3D11_DEPTH_WRITE_MASK_ALL;		// 깊이버퍼에 쓰기는 한다
+//equalsDesc.DepthFunc = D3D11_COMPARISON_LESS;
+
+//HR(m_pDevice->CreateDepthStencilState(&equalsDesc, &m_pDepthStencilState));

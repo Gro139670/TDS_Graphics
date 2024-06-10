@@ -157,6 +157,8 @@ public:
 
 	void PSSetModel()
 	{
+		//m_pDeviceContext->RSSetViewports(1, &m_ScreenViewport);
+		//m_pDeviceContext->OMSetRenderTargets(1, m_pScreenTargetView.GetAddressOf(), m_pScreenDepthView.Get());
 		m_pPixelShader = m_pDefaultPS.Get();
 		m_IsPixelShader = true;
 	}
@@ -369,6 +371,10 @@ template<typename T>
 void DX11Device::SetConstantBuffer(CB_Type _type, T* _data, Shader_Type _renderStage)
 {
 	m_pDeviceContext->UpdateSubresource(m_pConstantBuffer[(UINT)_type].Get(), 0, nullptr, _data, 0, 0);
+	/*if ((Shader_Type::DefulatPS & _renderStage) == Shader_Type::DefulatPS)
+	{
+		
+	}*/
 	if (_renderStage == Shader_Type::All)
 	{
 		m_pDeviceContext->PSSetConstantBuffers((UINT)_type, 1, m_pConstantBuffer[(UINT)_type].GetAddressOf());

@@ -1,11 +1,14 @@
-F:\Git\TDS_Graphics\TDS_Graphics\Graphics\Camera.cpp;F:\Git\TDS_Graphics\TDS_Graphics\Graphics\x64\Debug\Camera.obj
-F:\Git\TDS_Graphics\TDS_Graphics\Graphics\D3DRenderer.cpp;F:\Git\TDS_Graphics\TDS_Graphics\Graphics\x64\Debug\D3DRenderer.obj
-F:\Git\TDS_Graphics\TDS_Graphics\Graphics\DebugDraw.cpp;F:\Git\TDS_Graphics\TDS_Graphics\Graphics\x64\Debug\DebugDraw.obj
-F:\Git\TDS_Graphics\TDS_Graphics\Graphics\DX11Device.cpp;F:\Git\TDS_Graphics\TDS_Graphics\Graphics\x64\Debug\DX11Device.obj
-F:\Git\TDS_Graphics\TDS_Graphics\Graphics\FBXParser.cpp;F:\Git\TDS_Graphics\TDS_Graphics\Graphics\x64\Debug\FBXParser.obj
-F:\Git\TDS_Graphics\TDS_Graphics\Graphics\ID3DRenderer.cpp;F:\Git\TDS_Graphics\TDS_Graphics\Graphics\x64\Debug\ID3DRenderer.obj
-F:\Git\TDS_Graphics\TDS_Graphics\Graphics\Object.cpp;F:\Git\TDS_Graphics\TDS_Graphics\Graphics\x64\Debug\Object.obj
-F:\Git\TDS_Graphics\TDS_Graphics\Graphics\ObjectManager.cpp;F:\Git\TDS_Graphics\TDS_Graphics\Graphics\x64\Debug\ObjectManager.obj
-F:\Git\TDS_Graphics\TDS_Graphics\Graphics\pch.cpp;F:\Git\TDS_Graphics\TDS_Graphics\Graphics\x64\Debug\pch.obj
-F:\Git\TDS_Graphics\TDS_Graphics\Graphics\ResourceManager.cpp;F:\Git\TDS_Graphics\TDS_Graphics\Graphics\x64\Debug\ResourceManager.obj
-F:\Git\TDS_Graphics\TDS_Graphics\Graphics\TestObject.cpp;F:\Git\TDS_Graphics\TDS_Graphics\Graphics\x64\Debug\TestObject.obj
+C:\Users\user\Desktop\4Q_Project - 복사본\5_Project\5-4_MockeryEngine\MokeryEngine\Graphics\Camera.cpp;C:\Users\user\Desktop\4Q_Project - 복사본\5_Project\5-4_MockeryEngine\MokeryEngine\Graphics\x64\Debug\Camera.obj
+C:\Users\user\Desktop\4Q_Project - 복사본\5_Project\5-4_MockeryEngine\MokeryEngine\Graphics\D3DRenderer.cpp;C:\Users\user\Desktop\4Q_Project - 복사본\5_Project\5-4_MockeryEngine\MokeryEngine\Graphics\x64\Debug\D3DRenderer.obj
+C:\Users\user\Desktop\4Q_Project - 복사본\5_Project\5-4_MockeryEngine\MokeryEngine\Graphics\DebugDraw.cpp;C:\Users\user\Desktop\4Q_Project - 복사본\5_Project\5-4_MockeryEngine\MokeryEngine\Graphics\x64\Debug\DebugDraw.obj
+C:\Users\user\Desktop\4Q_Project - 복사본\5_Project\5-4_MockeryEngine\MokeryEngine\Graphics\DX11Device.cpp;C:\Users\user\Desktop\4Q_Project - 복사본\5_Project\5-4_MockeryEngine\MokeryEngine\Graphics\x64\Debug\DX11Device.obj
+C:\Users\user\Desktop\4Q_Project - 복사본\5_Project\5-4_MockeryEngine\MokeryEngine\Graphics\DXTKFont.cpp;C:\Users\user\Desktop\4Q_Project - 복사본\5_Project\5-4_MockeryEngine\MokeryEngine\Graphics\x64\Debug\DXTKFont.obj
+C:\Users\user\Desktop\4Q_Project - 복사본\5_Project\5-4_MockeryEngine\MokeryEngine\Graphics\FBXParser.cpp;C:\Users\user\Desktop\4Q_Project - 복사본\5_Project\5-4_MockeryEngine\MokeryEngine\Graphics\x64\Debug\FBXParser.obj
+C:\Users\user\Desktop\4Q_Project - 복사본\5_Project\5-4_MockeryEngine\MokeryEngine\Graphics\ID3DRenderer.cpp;C:\Users\user\Desktop\4Q_Project - 복사본\5_Project\5-4_MockeryEngine\MokeryEngine\Graphics\x64\Debug\ID3DRenderer.obj
+C:\Users\user\Desktop\4Q_Project - 복사본\5_Project\5-4_MockeryEngine\MokeryEngine\Graphics\Object.cpp;C:\Users\user\Desktop\4Q_Project - 복사본\5_Project\5-4_MockeryEngine\MokeryEngine\Graphics\x64\Debug\Object.obj
+C:\Users\user\Desktop\4Q_Project - 복사본\5_Project\5-4_MockeryEngine\MokeryEngine\Graphics\ObjectInfo.cpp;C:\Users\user\Desktop\4Q_Project - 복사본\5_Project\5-4_MockeryEngine\MokeryEngine\Graphics\x64\Debug\ObjectInfo.obj
+C:\Users\user\Desktop\4Q_Project - 복사본\5_Project\5-4_MockeryEngine\MokeryEngine\Graphics\ObjectManager.cpp;C:\Users\user\Desktop\4Q_Project - 복사본\5_Project\5-4_MockeryEngine\MokeryEngine\Graphics\x64\Debug\ObjectManager.obj
+C:\Users\user\Desktop\4Q_Project - 복사본\5_Project\5-4_MockeryEngine\MokeryEngine\Graphics\pch.cpp;C:\Users\user\Desktop\4Q_Project - 복사본\5_Project\5-4_MockeryEngine\MokeryEngine\Graphics\x64\Debug\pch.obj
+C:\Users\user\Desktop\4Q_Project - 복사본\5_Project\5-4_MockeryEngine\MokeryEngine\Graphics\Resource.cpp;C:\Users\user\Desktop\4Q_Project - 복사본\5_Project\5-4_MockeryEngine\MokeryEngine\Graphics\x64\Debug\Resource.obj
+C:\Users\user\Desktop\4Q_Project - 복사본\5_Project\5-4_MockeryEngine\MokeryEngine\Graphics\ResourceManager.cpp;C:\Users\user\Desktop\4Q_Project - 복사본\5_Project\5-4_MockeryEngine\MokeryEngine\Graphics\x64\Debug\ResourceManager.obj
+C:\Users\user\Desktop\4Q_Project - 복사본\5_Project\5-4_MockeryEngine\MokeryEngine\Graphics\TestObject.cpp;C:\Users\user\Desktop\4Q_Project - 복사본\5_Project\5-4_MockeryEngine\MokeryEngine\Graphics\x64\Debug\TestObject.obj
